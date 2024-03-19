@@ -1,0 +1,99 @@
+@font-face {
+    font-family: "chalk";
+    src: url(./EraserDust.ttf);
+}
+body{
+    background-color: gray;
+}
+
+.틀{
+    width: 750px;
+    height: 500px;
+
+    position: absolute; 
+    left: 50%; 
+    top: 50%; 
+    transform: translate(-50%, -50%);
+
+    background-image: url(./칠판.png);
+
+    
+}
+
+.제목{
+
+    font-size: 20px;
+    font-family: "chalk";
+
+    color: white;
+
+    margin: 20px;
+}
+
+.제목::selection{
+
+    background-color: black;
+    color: yellow;
+}
+
+.세로줄{
+    width: 700px;
+    text-align: center;
+
+    color: white;
+}
+
+.prob{
+    position: relative;
+    transform: translate(70%, 30%);
+    display:inline-flex;
+    padding: 20px;
+
+    font-family: chalk;
+    font-size: 60px;
+
+    color: white;
+
+}
+
+.interval{
+    padding: 10px;
+}
+
+.evr{
+    background-color: transparent;
+    outline: transparent;
+    height: 60px;
+    width: 60px;
+    font-size: 60px;
+    font-family: "chalk";
+    color: white;
+
+}
+
+#enter{
+    width: max-content;
+
+    font-family: "chalk";
+    font-size: 60px;
+
+    text-align: center;
+    transform: translate(200%, 200%);
+
+    color: white;
+}
+
+.enter::selection{
+
+    background-color: transparent;
+}
+
+.score{
+    text-align: right;
+    font-family: "chalk";
+    font-size: 60px;
+
+    padding: 20px;
+
+    color: red;
+}

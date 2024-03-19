@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>구구단 맞추기</title>
+            <link href="style.css" rel="stylesheet">
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    myFunction();
+                });
+
+                function myFunction() {
+                    lala();
+                }
+                function enter(){
+                    const text = document.getElementById('enter');
+                    text.style.color ="red";
+                }
+
+                function leave(){
+                    const text = document.getElementById('enter');
+                    text.style.color ="white";
+                }
+                
+                var score = 0;
+
+                function lala(){
+                    var mx = Math.floor(Math.random() * 10);
+                    var mi = Math.floor(Math.random() * 10);
+                    document.getElementById("question").textContent = mx + " x " + mi + " = ";
+                    document.getElementById("score").textContent = score;
+                    document.getElementById("answer").value = "";
+                }
+
+                function checkAnswer() {
+                    var userAnswer = parseInt(document.getElementById("answer").value);
+                    var mx = parseInt(document.getElementById("question").textContent.split(" ")[0]);
+                    var mi = parseInt(document.getElementById("question").textContent.split(" ")[2]);
+                    var correctAnswer = mx * mi;
+
+                    if (userAnswer === correctAnswer) {
+                        alert("정답입니다!");
+                        lala();
+                        score += 10;
+                        
+
+                    } else {
+                        alert("오답입니다...");
+                    }
+
+                    document.getElementById("score").textContent = score;
+
+                }
+
+            </script>
+        </head>
+        <body>
+            <div class="틀">
+
+                <div class="제목">
+                    multiplication tables!!
+                </div>
+
+                <hr class="세로줄">
+
+                <div id="score" class="score"></div>
+
+                <form onsubmit="cal();">
+
+                    <div class="prob">
+
+                        <div class="interval" id="question"></div>
+
+                        <div class="interval">
+                            <input class="evr" id="answer" type="text" required>
+                        </div>
+
+                    </div>
+
+                    <div id="enter" onclick="checkAnswer()" onmouseenter="enter();" onmouseleave="leave();" onmousedown="" required>
+                        Enter
+                    </div>
+
+                </form>
+
+            </div>
+        </body>
+    </html>   
